@@ -1,0 +1,28 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+	<!-- 指定打包后缀名 -->
+	<id>jar-with-dependencies</id>
+
+	<!-- 指定打包类型 -->
+	<formats>
+		<format>jar</format>
+	</formats>
+
+	<!-- 指定是否包含打包层目录 -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<!-- 指定输出配置 -->
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<unpack>true</unpack>
+			<includes>
+				<include>cn.rongcapital.mc2:event-sdk-kafka</include>
+				<include>cn.rongcapital.mc2:event-sdk-util</include>
+				<include>cn.rongcapital.mc2:event-sdk-core</include>
+				<include>cn.rongcapital.mc2:event-sdk-service</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>
